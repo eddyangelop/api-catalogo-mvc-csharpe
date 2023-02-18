@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiCatalogo.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230218102715_PopulaCategorias")]
+    [Migration("20230218120101_PopulaCategorias")]
     partial class PopulaCategorias
     {
         /// <inheritdoc />
@@ -52,7 +52,7 @@ namespace ApiCatalogo.Migrations
                     b.Property<int>("CategoriaId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DartaCadastro")
+                    b.Property<DateTime>("DataCadastro")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Descricao")
