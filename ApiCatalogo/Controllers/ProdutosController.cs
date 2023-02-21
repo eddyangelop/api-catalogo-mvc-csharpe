@@ -73,7 +73,7 @@ namespace ApiCatalogo.Controllers
 
             if (produto is null)
             {
-                return NotFound();
+                return NotFound($"Produto id: {id} não encontrado...");
             }
             _context.Produtos.Remove(produto);
             _context.SaveChanges();

@@ -29,7 +29,7 @@ namespace ApiCatalogo.Controllers
         {
             try
             {
-                return _context.Categorias.AsNoTracking().ToList();
+                return _context.Categorias.Take(10).ToList();
             }
             catch (Exception)
             {
@@ -49,7 +49,7 @@ namespace ApiCatalogo.Controllers
 
                 if (categoria is null)
                 {
-                    return NotFound($"Categoria com id= {id} não encontrada...");
+                    return NotFound($"Categoria com id: {id} não encontrada...");
                 }
                 return Ok(categoria);
             }
@@ -97,7 +97,7 @@ namespace ApiCatalogo.Controllers
 
             if (categoria is null)
             {
-                return NotFound($"Categoria com id= {id} não encontrada...");
+                return NotFound($"Categoria com id: {id} não encontrada...");
             }
             _context.Categorias.Remove(categoria);
             _context.SaveChanges();
